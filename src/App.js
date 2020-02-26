@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Agregamos elementos de react router
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import ExercicesContainer from './pages/ExercicesContainer';
+import ExercicesNewContainer from './pages/ExercicesNewContainer';
+import NotFound from './pages/NotFound.js'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // creamos las rutas del proyecto y mandan a llamar sus componentes
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/exercice" component={ExercicesContainer}/>
+        <Route exact path="/exercice/new" component={ExercicesNewContainer}/>
+        <Route component={NotFound}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
