@@ -3,6 +3,7 @@ import Loading from './../components/Loading' //agregamos el componente de loadi
 import FatalError from './500' //agregamos el componente de error
 import Exercices from './Exercices'
 import useFetch from './../hooks/useFetch' // agreamos el custom hook
+import url from './../config'; // agregamos la url para el consumo
 
 const ExercicesContainer = () => {
     /**
@@ -10,7 +11,7 @@ const ExercicesContainer = () => {
      * este hook retornara 3 valores por eso se declaran como
      * constantes
      */
-    const {data, loading, error} = useFetch('http://localhost:8000/api/exercises');
+    const {data, loading, error} = useFetch(`${url}/exercises`);
 
     // si loading esta en true mostramos el loading
     if(loading)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FatalError from './500'
 import ExercicesNew from './ExercicesNew'
+import url from './../config'; // agregamos la url para el consumo
 
 export class ExercicesNewContainer extends Component {
     // Declaramos el state del componente que se llenara por medio del componente hijo
@@ -49,7 +50,7 @@ export class ExercicesNewContainer extends Component {
                 // le mandamos el state 
                 body: JSON.stringify(this.state.form)
             }
-            let res = await fetch ('http://localhost:8000/api/exercises', config)
+            let res = await fetch (`${url}/exercises`, config)
             let json = await res.json()
             this.setState({
                 loading:false
