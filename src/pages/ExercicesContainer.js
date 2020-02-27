@@ -13,6 +13,13 @@ const ExercicesContainer = () => {
     const [loading, setLoadin] = useState(false)
     const [error, setError] = useState(null)
 
+    /**
+    * Este evento se ejecuta en cuanto el componente se renderea
+    * por lo que es bueno que lo usemos en el momento de hacer el
+    * consumo de un API
+    * Internamoente usamos setData, setLoadin y setError estos 3 son los que
+    * colocamos arriba y lo unico que se hace es pasar el valor que ahora debe tener
+    */
     useEffect(() => {
         const fetchExercises = async () => {
             try {
